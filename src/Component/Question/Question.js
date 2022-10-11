@@ -1,10 +1,10 @@
-import { click } from '@testing-library/user-event/dist/click';
+
 import React, { useState } from 'react';
 import './Question.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash  } from '@fortawesome/free-solid-svg-icons'
 
 const Question = ({ questions }) => {
     // console.log(questions);
@@ -12,12 +12,17 @@ const Question = ({ questions }) => {
         correctAnswer } = questions
 
     const [q1, q2, q3, q4, ]=options
-    const [eye, setEye]=useState()
+    const [eye, setEye]=useState(correctAnswer)
    
     const handleIcon=(correctAnswer)=>{
-     
-       
-    }
+    const show=eye
+    
+    setEye(show) 
+    
+    toast(correctAnswer)
+    
+
+}
     
 const handleAns= (options)=>{
    if(correctAnswer===options){
@@ -30,11 +35,12 @@ const handleAns= (options)=>{
 }
     
     return (
-        <div className='question border container p-1 shadow-lg p-3 mb-5 bg-body rounded '>
-            <div className='d-flex'>
+        <div className='question border container shadow-lg p-3 mb-5 bg-body rounded '>
+            <div className='d-flex justify-content-center'>
                 <h5 className='mb-5'>{question}</h5>
-                <button onClick={()=>handleIcon(correctAnswer)}><FontAwesomeIcon icon={faEye} /></button>
-
+                <div className='ms-2 '>
+                <button onClick={()=>handleIcon(correctAnswer)}> <FontAwesomeIcon icon={faEyeSlash} /></button>
+                </div>
             </div>
            
             <div className='d-flex gap-1 justify-content-center '>
