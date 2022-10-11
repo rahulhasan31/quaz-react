@@ -9,6 +9,7 @@ const Home = () => {
    
     return (
         <div  className='container jus'>
+            <h1>Welcome To Quiz Game</h1>
               
          {
             quizs.data.map(quiz=><Quiz
