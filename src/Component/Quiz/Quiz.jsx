@@ -6,17 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 const Quiz = ({quiz}) => {
     const {name, logo, id, total}=quiz
+    console.log(id);
     const navigate= useNavigate()
     const handleNavigate=()=>{
       navigate(`/quiz/${id}`)
       
     }
     return (
-        <div className='quiz '>
+        <div className='quiz text-center '>
                        
-             <Row xs={1} md={2} className="g-4">
+          <Row xs={1} md={2} className="g-4 m-5 text-center">
+            
       {Array.from({ length: 1 }).map((_, idx) => (
-        <Col>
+        <Col className='justify-content-star'>
           <Card>
             <Card.Img className='bg-success' variant="top" src={logo} />
             <Card.Body>

@@ -10,7 +10,7 @@ const QuizDetails = () => {
     
     return (
         <div className='border bg-success p-2 text-dark bg-opacity-10'>
-            <h1>detail quiz{id} </h1>
+            <h1>Detail Quiz{id} </h1>
             {
                 quizDetails.data.questions.map(questions=><Question
                 key={questions.id}
