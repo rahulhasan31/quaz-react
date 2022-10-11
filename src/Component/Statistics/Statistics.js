@@ -7,16 +7,19 @@ const Statistics = () => {
     const data=statistics.data
     console.log(data);
     return (
-        <div>
-            <h1>Statistics section </h1>
+        <ResponsiveContainer width="100%" height="100%">
+            <div className='container mt-5'>
+        
             <LineChart  width={500}
           height={300} data={data} ><Line type="monotone" dataKey="total" stroke="#82ca9d" />
           <XAxis dataKey="name" />
           <YAxis />
+          <Tooltip/>
           
           </LineChart>
             
         </div>
+        </ResponsiveContainer>
     );
 };
 
