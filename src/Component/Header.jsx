@@ -7,11 +7,11 @@ const Header = () => {
         <div>
         <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to='/'>Navbar</Navbar.Brand>
+          <Navbar.Brand as={Link} to='/'>Quiz Game</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-            <Nav.Link as={Link} to='/about'></Nav.Link>
+            <Nav.Link as={Link} to='/statistics'>Statistics</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
